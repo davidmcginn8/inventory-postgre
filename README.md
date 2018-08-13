@@ -48,7 +48,9 @@ If you are deploying to Heroku, set ``` HEROKU_URL ``` as the url of your app!
 * Visit http://localhost:3000
 * Use ```demo@demo.com```  ```change_me``` for the email and password. Change the password and email once you login. Create more users via the Console.
 
-use heroku run rake 
+use : 
+
+heroku run rake 
 
    db:create creates the database for the current env
    db:create:all creates the databases for all envs
@@ -75,11 +77,12 @@ to migrate database
 Then push to github
 
 git add .
-git -am ""
+git commit -am ""
 
 phsh on heroku 
 
 heroku run rake db:migrate
+git push heroku master
 
 
 
