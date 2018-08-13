@@ -82,6 +82,9 @@ git commit -am ""
 phsh on heroku 
 
 heroku run rake db:migrate
+
+heroku run rake db:seed
+
 git push heroku master
 
 
