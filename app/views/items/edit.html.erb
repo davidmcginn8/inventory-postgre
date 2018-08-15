@@ -44,7 +44,16 @@
               <% end %>
               <div class="box-body">
                 <div class="form-group">
-                  <label>Product</label>
+                  <label>Device</label>
+<!-- NB                  #Keep the catagories as they were ment t be for now. I can update this t a later stage          -->
+                  <%#= f.number_field :quantity, class: "form-control", placeholder: "Enter Quantity", required: true  %>
+                  <%= f.select(:category, [["Computer","Computer"], ["Monitor","Monitor"], ["Phone","Phone"], ["Other","Other"]], {}, { :class => 'form-control' })%>
+                  <%#= f.text_field :category, class: "form-control", placeholder: "Enter Modle name"  %>
+                </div>
+                
+                
+                <div class="form-group">
+                  <label>Model</label>
                   <%= f.text_field :name, class: "form-control", placeholder: "Enter Full Name", required: true %>
                 </div>
                 <div class="form-group">
@@ -58,10 +67,6 @@
                 <div class="form-group">
                   <label>Remaining Quantity</label>
                   <%= f.number_field :remaining_quantity, class: "form-control", placeholder: "Enter Quantity", required: true  %>
-                </div>
-                <div class="form-group">
-                  <label>Model</label>
-                  <%= f.text_field :category, class: "form-control", placeholder: "Enter Modle name"  %>
                 </div>
               </div>
               <!-- /.box-body -->
