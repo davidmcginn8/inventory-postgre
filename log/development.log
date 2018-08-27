@@ -6384,3 +6384,310 @@ Processing by OrdersController#old as HTML
 Completed 200 OK in 130ms (Views: 123.6ms | ActiveRecord: 1.4ms)
 
 
+Started GET "/" for 94.119.64.18 at 2018-08-15 19:19:52 +0000
+Cannot render console from 94.119.64.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by OrdersController#index as HTML
+Completed 401 Unauthorized in 24ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 94.119.64.18 at 2018-08-15 19:19:53 +0000
+Cannot render console from 94.119.64.18! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (25.9ms)
+  Rendered layouts/_notifications.html.erb (2.3ms)
+Completed 200 OK in 493ms (Views: 477.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users/sign_in" for 94.119.64.11 at 2018-08-15 19:20:30 +0000
+Cannot render console from 94.119.64.11! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ceEP7rlB0mG/DpFnljuYCDVc3FmN2JSPvx4hEa6MOCh2ewvk8kYyv47BV7tMbAJEyqzVU9kHj0LN3wXT6xZjTg==", "user"=>{"email"=>"d.mcginn@glofox.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "d.mcginn@glofox.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2018-08-15 19:20:30 UTC], ["last_sign_in_at", 2018-08-15 17:49:57 UTC], ["current_sign_in_ip", "94.119.64.11"], ["sign_in_count", 3], ["updated_at", 2018-08-15 19:20:30 UTC], ["id", 7]]
+  [1m[35m (24.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://glofox-inventory-members-heroku-davemc.c9users.io/
+Completed 302 Found in 202ms (ActiveRecord: 26.1ms)
+
+
+Started GET "/" for 94.119.64.11 at 2018-08-15 19:20:30 +0000
+Cannot render console from 94.119.64.11! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering orders/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (3.6ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("items"."quantity") FROM "items"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("items"."remaining_quantity") FROM "items"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("items"."quantity") FROM "items"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("items"."remaining_quantity") FROM "items"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE (expire_at < '2018-08-15') AND "orders"."status" = ?[0m  [["status", true]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."status" = ?[0m  [["status", true]]
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."status" = ?[0m  [["status", true]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "members"[0m
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  Rendered layouts/_footer.html.erb (0.5ms)
+  Rendered orders/index.html.erb within layouts/application (61.6ms)
+  Rendered layouts/_notifications.html.erb (1.0ms)
+Completed 200 OK in 201ms (Views: 155.9ms | ActiveRecord: 5.4ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 188.141.73.155 at 2018-08-22 19:01:15 +0000
+Cannot render console from 188.141.73.155! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by OrdersController#index as HTML
+Completed 401 Unauthorized in 15ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 188.141.73.155 at 2018-08-22 19:01:16 +0000
+Cannot render console from 188.141.73.155! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (24.7ms)
+  Rendered layouts/_notifications.html.erb (0.8ms)
+Completed 200 OK in 498ms (Views: 472.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users/sign_in" for 188.141.73.155 at 2018-08-22 19:01:25 +0000
+Cannot render console from 188.141.73.155! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aq4u72U9KefZMyMsK1lpqpx03k3VX13jUQInGztWlUgzOpvgSaVbfKx0yxOV4HScvFSXsW2Wk85mNz0UPzm6AQ==", "user"=>{"email"=>"d.mcginn@glofox.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "d.mcginn@glofox.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", 2018-08-22 19:01:25 UTC], ["last_sign_in_at", 2018-08-15 19:20:30 UTC], ["current_sign_in_ip", "188.141.73.155"], ["last_sign_in_ip", "94.119.64.11"], ["sign_in_count", 4], ["updated_at", 2018-08-22 19:01:25 UTC], ["id", 7]]
+  [1m[35m (11.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://glofox-inventory-members-heroku-davemc.c9users.io/
+Completed 302 Found in 188ms (ActiveRecord: 12.5ms)
+
+
+Started GET "/" for 188.141.73.155 at 2018-08-22 19:01:25 +0000
+Cannot render console from 188.141.73.155! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering orders/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.6ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("items"."quantity") FROM "items"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("items"."remaining_quantity") FROM "items"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("items"."quantity") FROM "items"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("items"."remaining_quantity") FROM "items"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE (expire_at < '2018-08-22') AND "orders"."status" = ?[0m  [["status", true]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."status" = ?[0m  [["status", true]]
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."status" = ?[0m  [["status", true]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "members"[0m
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  Rendered layouts/_footer.html.erb (0.5ms)
+  Rendered orders/index.html.erb within layouts/application (66.5ms)
+  Rendered layouts/_notifications.html.erb (0.9ms)
+Completed 200 OK in 188ms (Views: 149.9ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/items" for 188.141.73.155 at 2018-08-22 19:01:30 +0000
+Cannot render console from 188.141.73.155! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering items/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.5ms)
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered layouts/_footer.html.erb (0.4ms)
+  Rendered items/index.html.erb within layouts/application (9.9ms)
+  Rendered layouts/_notifications.html.erb (0.8ms)
+Completed 200 OK in 109ms (Views: 105.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/past_orders" for 188.141.73.155 at 2018-08-22 19:01:36 +0000
+Cannot render console from 188.141.73.155! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#old as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering orders/old.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.5ms)
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."status" = ?[0m  [["status", false]]
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered layouts/_footer.html.erb (0.5ms)
+  Rendered orders/old.html.erb within layouts/application (12.0ms)
+  Rendered layouts/_notifications.html.erb (0.7ms)
+Completed 200 OK in 87ms (Views: 82.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/items" for 188.141.73.155 at 2018-08-22 19:01:39 +0000
+Cannot render console from 188.141.73.155! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering items/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.2ms)
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered layouts/_footer.html.erb (0.3ms)
+  Rendered items/index.html.erb within layouts/application (8.1ms)
+  Rendered layouts/_notifications.html.erb (0.7ms)
+Completed 200 OK in 93ms (Views: 89.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 188.141.73.155 at 2018-08-22 19:02:02 +0000
+Cannot render console from 188.141.73.155! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering orders/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.4ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("items"."quantity") FROM "items"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("items"."remaining_quantity") FROM "items"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("items"."quantity") FROM "items"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("items"."remaining_quantity") FROM "items"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE (expire_at < '2018-08-22') AND "orders"."status" = ?[0m  [["status", true]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."status" = ?[0m  [["status", true]]
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."status" = ?[0m  [["status", true]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "members"[0m
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  Rendered layouts/_footer.html.erb (0.7ms)
+  Rendered orders/index.html.erb within layouts/application (41.6ms)
+  Rendered layouts/_notifications.html.erb (0.7ms)
+Completed 200 OK in 121ms (Views: 116.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/items" for 188.141.73.155 at 2018-08-22 19:02:17 +0000
+Cannot render console from 188.141.73.155! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering items/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.6ms)
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered layouts/_footer.html.erb (0.4ms)
+  Rendered items/index.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_notifications.html.erb (0.8ms)
+Completed 200 OK in 98ms (Views: 95.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 188.141.73.155 at 2018-08-22 19:03:33 +0000
+Cannot render console from 188.141.73.155! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering orders/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.4ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("items"."quantity") FROM "items"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("items"."remaining_quantity") FROM "items"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("items"."quantity") FROM "items"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("items"."remaining_quantity") FROM "items"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE (expire_at < '2018-08-22') AND "orders"."status" = ?[0m  [["status", true]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."status" = ?[0m  [["status", true]]
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."status" = ?[0m  [["status", true]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "members"[0m
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  Rendered layouts/_footer.html.erb (0.4ms)
+  Rendered orders/index.html.erb within layouts/application (18.7ms)
+  Rendered layouts/_notifications.html.erb (0.8ms)
+Completed 200 OK in 94ms (Views: 88.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/past_orders" for 188.141.73.155 at 2018-08-22 19:03:42 +0000
+Cannot render console from 188.141.73.155! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#old as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering orders/old.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.5ms)
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."status" = ?[0m  [["status", false]]
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered layouts/_footer.html.erb (0.4ms)
+  Rendered orders/old.html.erb within layouts/application (11.4ms)
+  Rendered layouts/_notifications.html.erb (0.7ms)
+Completed 200 OK in 94ms (Views: 89.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/items" for 188.141.73.155 at 2018-08-22 19:03:45 +0000
+Cannot render console from 188.141.73.155! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering items/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.3ms)
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered layouts/_footer.html.erb (0.4ms)
+  Rendered items/index.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_notifications.html.erb (0.8ms)
+Completed 200 OK in 85ms (Views: 82.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 188.141.73.155 at 2018-08-22 19:04:00 +0000
+Cannot render console from 188.141.73.155! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering orders/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.6ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT SUM("items"."quantity") FROM "items"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT SUM("items"."remaining_quantity") FROM "items"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("items"."quantity") FROM "items"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT SUM("items"."remaining_quantity") FROM "items"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE (expire_at < '2018-08-22') AND "orders"."status" = ?[0m  [["status", true]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."status" = ?[0m  [["status", true]]
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."status" = ?[0m  [["status", true]]
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "members"[0m
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members"[0m
+  Rendered layouts/_footer.html.erb (0.5ms)
+  Rendered orders/index.html.erb within layouts/application (64.0ms)
+  Rendered layouts/_notifications.html.erb (0.7ms)
+Completed 200 OK in 136ms (Views: 131.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/items" for 188.141.73.155 at 2018-08-22 19:05:21 +0000
+Cannot render console from 188.141.73.155! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering items/index.html.erb within layouts/application
+  Rendered layouts/_header.html.erb (2.3ms)
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  Rendered layouts/_footer.html.erb (0.3ms)
+  Rendered items/index.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_notifications.html.erb (0.7ms)
+Completed 200 OK in 93ms (Views: 89.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 144.2.243.122 at 2018-08-27 12:51:44 +0000
+Cannot render console from 144.2.243.122! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by OrdersController#index as HTML
+Completed 401 Unauthorized in 17ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 144.2.243.122 at 2018-08-27 12:51:44 +0000
+Cannot render console from 144.2.243.122! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (17.8ms)
+  Rendered layouts/_notifications.html.erb (0.8ms)
+Completed 200 OK in 683ms (Views: 668.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/sign_in" for 144.2.243.122 at 2018-08-27 12:54:53 +0000
+Cannot render console from 144.2.243.122! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_notifications.html.erb (0.7ms)
+Completed 200 OK in 90ms (Views: 88.8ms | ActiveRecord: 0.0ms)
+
+
