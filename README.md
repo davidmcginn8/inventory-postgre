@@ -79,7 +79,7 @@ Then push to github
 git add .
 git commit -am ""
 
-phsh on heroku 
+push on heroku 
 
 heroku run rake db:migrate
 
